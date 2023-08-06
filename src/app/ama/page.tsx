@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <>
-      <Header title="調整さん" />
+      <Header className="py-6" />
       <main className="bg-gray-300 px-5 py-5">
         <h1>/menu/page</h1>
         <form>
