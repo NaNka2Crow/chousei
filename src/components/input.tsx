@@ -1,28 +1,14 @@
-"use client";
-import React, { ChangeEventHandler, FC, ComponentProps, useState } from "react";
+import React, { FC, ComponentProps } from "react";
 
 type Props = ComponentProps<"input">;
 
-const Input: FC<Props> = ({ placeholder, onChange }) => {
-  const [value, setValue] = useState("");
-
-  const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
-    event.preventDefault();
-    setValue(event.target.value);
-    if (onChange) {
-      onChange(event);
-    }
-  };
-
+const Input: FC<Props> = (props) => {
   return (
     <input
       type="text"
-      placeholder={placeholder}
-      value={value}
-      onChange={handleChange}
+      {...props}
       className="rounded border-2 border-blue-500 text-red-500"
     />
   );
 };
-
 export default Input;
