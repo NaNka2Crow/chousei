@@ -1,14 +1,15 @@
 "use client";
-import React, { useState } from "react";
+import React, { ChangeEventHandler, FC, ComponentProps, useState } from "react";
 
-const Input = ({ placeholder, onChange }) => {
+type Props = ComponentProps<"input">;
+
+const Input: FC<Props> = ({ placeholder, onChange }) => {
   const [value, setValue] = useState("");
 
-  const handleChange = (e) => {
-    const newValue = e.target.value;
-    setValue(newValue);
+  const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setValue(e.target.value);
     if (onChange) {
-      onChange(newValue);
+      onChange(e);
     }
   };
 
