@@ -1,11 +1,17 @@
 import { FC } from "react";
 
 type Props = {
-  title: string;
+  p: string;
 };
 
-const Header: FC<Props> = ({ title }) => {
-  return <header className="bg-red-300 py-10">{title}</header>;
+const Header: FC<Props> = ({ p }) => {
+  return (
+    <>
+      <header className={`bg-green-600 p-${p} text-3xl font-bold text-white`}>
+        使いやすい調整さん
+      </header>
+    </>
+  );
 };
 
 export default Header;
