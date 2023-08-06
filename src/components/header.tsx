@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 type Props = {
-  p: string;
+  p: number;
 };
 
 const Header: FC<Props> = ({ p }) => {
