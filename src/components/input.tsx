@@ -6,10 +6,11 @@ type Props = ComponentProps<"input">;
 const Input: FC<Props> = ({ placeholder, onChange }) => {
   const [value, setValue] = useState("");
 
-  const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-    setValue(e.target.value);
+  const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
+    event.preventDefault();
+    setValue(event.target.value);
     if (onChange) {
-      onChange(e);
+      onChange(event);
     }
   };
 
