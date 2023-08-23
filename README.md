@@ -65,3 +65,14 @@ settings.json の例
     },
 }
 ```
+#### firebaseの追加
+```
+npm install firebase-tools
+firebase login
+firebase init
+```
+デプロイ
+```
+npm run build
+firebase deploy
+```
